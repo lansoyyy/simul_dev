@@ -3,12 +3,12 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "a350cf767e56247812285440521d4721",
+const RESOURCES = {"flutter_bootstrap.js": "ba7e9bde7577c5dc69bf50f1bd6b761b",
 "version.json": "020c8b68e3d4f9e28defdb3717a364a9",
 "favicon.ico": "854039ff68c9f1b62604811a3f684818",
 "index.html": "bac8e8c9d773c9e5932cd1c2ad9202ab",
 "/": "bac8e8c9d773c9e5932cd1c2ad9202ab",
-"main.dart.js": "817c152bbbf6d8b052903ba3dde8b56d",
+"main.dart.js": "28f20a237dc1e5d32c0f15f28fdefd53",
 "flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "favicon.png": "854039ff68c9f1b62604811a3f684818",
 "icons/Icon-192.png": "b599ac4cd4f34f1ff721bd5d34b5ae3b",
@@ -27,7 +27,7 @@ const RESOURCES = {"flutter_bootstrap.js": "a350cf767e56247812285440521d4721",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/shaders/stretch_effect.frag": "40d68efbbf360632f614c731219e95f0",
 "assets/AssetManifest.bin": "c4b836396d9b9cf7b64b3602d73a1ae4",
-"assets/fonts/MaterialIcons-Regular.otf": "8e7875ebf87503a5fb26ba2bdb1de831",
+"assets/fonts/MaterialIcons-Regular.otf": "ba55e26c220e4546f484efa503671241",
 "assets/assets/images/taxi_button.jpg": "89880a3b41624a1fd0cf28bf4f79f692",
 "assets/assets/images/navIconWithName.png": "58cd9c0e8ab3f73ae9773201b3359b4a",
 "assets/assets/images/navIcon.png": "fcd62129d3e5edcab26085a73607314f",
