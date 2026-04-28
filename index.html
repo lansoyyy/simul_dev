@@ -51,6 +51,28 @@
 </head>
 
 <body>
+  <script>
+    // GitHub Pages deep-link fallback:
+    // 404.html redirects unknown paths to /?__gh_pages_route=<encoded_path>.
+    // Restore the original path before Flutter reads Uri.base.
+    (function () {
+      try {
+        var url = new URL(window.location.href);
+        var encodedRoute = url.searchParams.get('__gh_pages_route');
+        if (!encodedRoute) return;
+
+        var decodedRoute = decodeURIComponent(encodedRoute);
+        if (!decodedRoute.startsWith('/')) {
+          decodedRoute = '/' + decodedRoute;
+        }
+
+        var cleanUrl = window.location.origin + decodedRoute;
+        window.history.replaceState(null, '', cleanUrl);
+      } catch (_) {
+        // Keep default load flow if route restoration fails.
+      }
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 
