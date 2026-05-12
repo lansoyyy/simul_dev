@@ -7,8 +7,14 @@
   <title>Redirecting...</title>
   <script>
     (function () {
-      var path = window.location.pathname + window.location.search + window.location.hash;
-      var target = '/?__gh_pages_route=' + encodeURIComponent(path);
+      var path = window.location.pathname;
+      var repoSegment = '';
+      var segments = path.split('/');
+      if (segments.length > 1 && segments[1] !== '') {
+        repoSegment = '/' + segments[1];
+      }
+      var fullPath = window.location.pathname + window.location.search + window.location.hash;
+      var target = repoSegment + '/?__gh_pages_route=' + encodeURIComponent(fullPath);
       window.location.replace(target);
     })();
   </script>
