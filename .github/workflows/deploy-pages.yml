@@ -1,0 +1,38 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify Flutter web build output
+        run: |
+          test -f .nojekyll || touch .nojekyll
+          test -f index.html || (echo "Missing index.html" && exit 1)
+          test -f main.dart.js || (echo "Missing main.dart.js" && exit 1)
+
+      - name: Upload Pages artifact
+        uses: ./.github/actions/upload-pages-artifact
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: ./.github/actions/deploy-pages
