@@ -35,6 +35,13 @@
 
   <title>Simul</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    /* Prevent horizontal swipe / overscroll from triggering browser back/forward. */
+    html,
+    body {
+      overscroll-behavior-x: none;
+    }
+  </style>
 
   <!-- Google Maps JavaScript API (places library required for autocomplete) -->
   <script
